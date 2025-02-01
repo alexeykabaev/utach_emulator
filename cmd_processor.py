@@ -38,7 +38,7 @@ Status Size:        12 0E 00 00 00 00
 Status Dump:        12 40 00 00 00 00
 Source List:        80 0D 00 00 00 01 00
 Destination List:   80 0D 01 00 00 01 01
-Set XTP:            12 00 09 00 00 08 00 03 00 05 00 00 00 01
+Set XPT:            12 00 09 00 00 08 00 03 00 05 00 00 00 01
 GET Matrix:         12 16 06 00 00 04 00 05 00 01
 GET Matrix:         12 16 00 00 00 04 00 00 00 00
 
