@@ -21,7 +21,7 @@ class RCP(Protocol):
     def connectionMade(self) -> None:
         self.addr = f"{self.transport.getHost().host}:{self.transport.getPeer().port}"
         log.info(f"RCP {self.addr} connected")
-        self.closeTask = task.LoopingCall(lambda: self.transport.loseConnection())
+        self.closeTask = task.LoopingCall(self.transport.loseConnection)
         self.closeTask.start(MAX_INACTIVITY_TIME, now=False)
         self.cmdProc = CmdProcessor()
         self.cmdProc.pcol = self

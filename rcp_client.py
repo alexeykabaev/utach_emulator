@@ -34,7 +34,7 @@ class RCPClient(Protocol):
 
     def connectionMade(self):
         log.info("Connected to Rtr")
-        self.pingTask = task.LoopingCall(lambda: self.transport.write(PING_CMD))
+        self.pingTask = task.LoopingCall(self.transport.write, PING_CMD)
         self.pingTask.start(PING_TIME, now=False)
         self.sendData(VERBOSITY_CMD)
 
